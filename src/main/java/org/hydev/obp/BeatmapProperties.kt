@@ -15,134 +15,134 @@ import kotlinx.serialization.Serializable
 @Serializable
 class BeatmapProperties(
 
-        // Location of the audio file relative to the current folder
-        var audioFilename: String = " ",
+    // Location of the audio file relative to the current folder
+    var audioFilename: String = " ",
 
-        // Milliseconds of silence before the audio starts playing
-        var audioLeadIn: Int = 0,
+    // Milliseconds of silence before the audio starts playing
+    var audioLeadIn: Int = 0,
 
-        // *Deprecated*
-        var audioHash: String = " ",
+    // *Deprecated*
+    var audioHash: String = " ",
 
-        // Time in milliseconds when the audio preview should start
-        var previewTime: Int = -1,
+    // Time in milliseconds when the audio preview should start
+    var previewTime: Int = -1,
 
-        // Speed of the countdown before the first hit object
-        // (0 = no countdown, 1 = normal, 2 = half, 3 = double)
-        var countdown: Int = 1,
+    // Speed of the countdown before the first hit object
+    // (0 = no countdown, 1 = normal, 2 = half, 3 = double)
+    var countdown: Int = 1,
 
-        // Sample set that will be used if timing points do not override it (Normal, Soft, Drum)
-        var sampleSet: String = "Normal",
+    // Sample set that will be used if timing points do not override it (Normal, Soft, Drum)
+    var sampleSet: String = "Normal",
 
-        // Multiplier for the threshold in time where hit objects placed close together stack (0–1)
-        var stackLeniency: Double = 0.7,
+    // Multiplier for the threshold in time where hit objects placed close together stack (0–1)
+    var stackLeniency: Double = 0.7,
 
-        // Game mode (0 = osu!, 1 = osu!taiko, 2 = osu!catch, 3 = osu!mania)
-        var mode: Int = 0,
+    // Game mode (0 = osu!, 1 = osu!taiko, 2 = osu!catch, 3 = osu!mania)
+    var mode: Int = 0,
 
-        // Whether or not breaks have a letterboxing effect
-        var letterboxInBreaks: Boolean = false,
+    // Whether or not breaks have a letterboxing effect
+    var letterboxInBreaks: Boolean = false,
 
-        // *Deprecated*
-        var storyFireInFront: Boolean = true,
+    // *Deprecated*
+    var storyFireInFront: Boolean = true,
 
-        // Whether or not the storyboard can use the user's skin images
-        var useSkinSprites: Boolean = false,
+    // Whether or not the storyboard can use the user's skin images
+    var useSkinSprites: Boolean = false,
 
-        // *Deprecated*
-        var alwaysShowPlayfield: Boolean = false,
+    // *Deprecated*
+    var alwaysShowPlayfield: Boolean = false,
 
-        // Draw order of hit circle overlays compared to hit numbers
-        // (NoChange = use skin setting, Below = draw overlays under numbers, Above = draw overlays on top of numbers)
-        var overlayPosition: String = "NoChange",
+    // Draw order of hit circle overlays compared to hit numbers
+    // (NoChange = use skin setting, Below = draw overlays under numbers, Above = draw overlays on top of numbers)
+    var overlayPosition: String = "NoChange",
 
-        // Preferred skin to use during gameplay
-        var skinPreference: String = " ",
+    // Preferred skin to use during gameplay
+    var skinPreference: String = " ",
 
-        // Whether or not a warning about flashing colours should be shown at the beginning of the map
-        var epilepsyWarning: Boolean = false,
+    // Whether or not a warning about flashing colours should be shown at the beginning of the map
+    var epilepsyWarning: Boolean = false,
 
-        // Time in beats that the countdown starts before the first hit object
-        var countdownOffset: Int = 0,
+    // Time in beats that the countdown starts before the first hit object
+    var countdownOffset: Int = 0,
 
-        // Whether or not the "N+1" style key layout is used for osu!mania
-        var specialStyle: Boolean = false,
+    // Whether or not the "N+1" style key layout is used for osu!mania
+    var specialStyle: Boolean = false,
 
-        // Whether or not the storyboard allows widescreen viewing
-        var widescreenStoryboard: Boolean = false,
+    // Whether or not the storyboard allows widescreen viewing
+    var widescreenStoryboard: Boolean = false,
 
-        // Whether or not sound samples will change rate when playing with speed-changing mods
-        var samplesMatchPlaybackRate: Boolean = false,
-
-
-        // Editor
-
-        // Time in milliseconds of bookmarks
-        var bookmarks: String,
-
-        // Distance snap multiplier
-        var distanceSpacing: Double,
-
-        // Beat snap divisor
-        var beatDivisor: Double,
-
-        // Grid size
-        var gridSize: Int,
-
-        // Scale factor for the object timeline
-        var timelineZoom: Double,
+    // Whether or not sound samples will change rate when playing with speed-changing mods
+    var samplesMatchPlaybackRate: Boolean = false,
 
 
-        // Metadata
+    // Editor
 
-        // Romanised song title
-        var title: String = "",
+    // Time in milliseconds of bookmarks
+    var bookmarks: String,
 
-        // Song title
-        var titleUnicode: String = "",
+    // Distance snap multiplier
+    var distanceSpacing: Double,
 
-        // Romanised song artist
-        var artist: String = "",
+    // Beat snap divisor
+    var beatDivisor: Double,
 
-        // Song artist
-        var artistUnicode: String = "",
+    // Grid size
+    var gridSize: Int,
 
-        // Beatmap creator
-        var creator: String = "",
-
-        // Difficulty name
-        var version: String = "",
-
-        // Original media the song was produced for
-        var source: String = "",
-
-        // Search terms
-        var tags: String,
-
-        // Beatmap ID
-        var beatmapID: Int,
-
-        // Beatmapset ID
-        var beatmapSetID: Int,
+    // Scale factor for the object timeline
+    var timelineZoom: Double,
 
 
-        // Difficulty
+    // Metadata
 
-        // HP setting (0–10)
-        var hPDrainRate: Double,
+    // Romanised song title
+    var title: String = "",
 
-        // CS setting (0–10)
-        var circleSize: Double,
+    // Song title
+    var titleUnicode: String = "",
 
-        // OD setting (0–10)
-        var overallDifficulty: Double,
+    // Romanised song artist
+    var artist: String = "",
 
-        // AR setting (0–10)
-        var approachRate: Double,
+    // Song artist
+    var artistUnicode: String = "",
 
-        // Base slider velocity in hecto-[osu! pixels](/wiki/Glossary#osupixel) per beat
-        var sliderMultiplier: Double,
+    // Beatmap creator
+    var creator: String = "",
 
-        // Amount of slider ticks per beat
-        var sliderTickRate: Double
+    // Difficulty name
+    var version: String = "",
+
+    // Original media the song was produced for
+    var source: String = "",
+
+    // Search terms
+    var tags: String,
+
+    // Beatmap ID
+    var beatmapID: Int,
+
+    // Beatmapset ID
+    var beatmapSetID: Int,
+
+
+    // Difficulty
+
+    // HP setting (0–10)
+    var hPDrainRate: Double,
+
+    // CS setting (0–10)
+    var circleSize: Double,
+
+    // OD setting (0–10)
+    var overallDifficulty: Double,
+
+    // AR setting (0–10)
+    var approachRate: Double,
+
+    // Base slider velocity in hecto-[osu! pixels](/wiki/Glossary#osupixel) per beat
+    var sliderMultiplier: Double,
+
+    // Amount of slider ticks per beat
+    var sliderTickRate: Double
 )
