@@ -1,5 +1,7 @@
 package org.hydev.obp
 
+import java.util.*
+
 /**
  * Beatmap timings
  * https://github.com/ppy/osu-wiki/blob/master/wiki/osu!_File_Formats/Osu_(file_format)/en.md#timing-points
@@ -38,5 +40,5 @@ class BeatmapTimingPoint(
     var uninherited: Boolean,
 
     // Bit flags that give the timing point extra effects. See [the effects section](#effects).
-    var effects: Int
+    var effects: BitSet
 )
