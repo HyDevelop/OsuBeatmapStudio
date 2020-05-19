@@ -1,0 +1,43 @@
+| `AudioFilename` | String | Location of the audio file relative to the current folder |  |
+| `AudioLeadIn` | Integer | Milliseconds of silence before the audio starts playing | 0 |
+| `AudioHash` | String | *Deprecated* |  |
+| `PreviewTime` | Integer | Time in milliseconds when the audio preview should start | -1 |
+| `Countdown` | Integer | Speed of the countdown before the first hit object (`0` = no countdown, `1` = normal, `2` = half, `3` = double) | 1 |
+| `SampleSet` | String | Sample set that will be used if timing points do not override it (`Normal`, `Soft`, `Drum`) | Normal |
+| `StackLeniency` | Decimal | Multiplier for the threshold in time where hit objects placed close together stack (0–1) | 0.7 |
+| `Mode` | Integer | Game mode (`0` = osu!, `1` = osu!taiko, `2` = osu!catch, `3` = osu!mania) | 0 |
+| `LetterboxInBreaks` | 0 or 1 | Whether or not breaks have a letterboxing effect | 0 |
+| `StoryFireInFront` | 0 or 1 | *Deprecated* | 1 |
+| `UseSkinSprites` | 0 or 1 | Whether or not the storyboard can use the user's skin images | 0 |
+| `AlwaysShowPlayfield` | 0 or 1 | *Deprecated* | 0 |
+| `OverlayPosition` | String | Draw order of hit circle overlays compared to hit numbers (`NoChange` = use skin setting, `Below` = draw overlays under numbers, `Above` = draw overlays on top of numbers) | NoChange |
+| `SkinPreference` | String | Preferred skin to use during gameplay |  |
+| `EpilepsyWarning` | 0 or 1 | Whether or not a warning about flashing colours should be shown at the beginning of the map | 0 |
+| `CountdownOffset` | Integer | Time in beats that the countdown starts before the first hit object | 0 |
+| `SpecialStyle` | 0 or 1 | Whether or not the "N+1" style key layout is used for osu!mania | 0 |
+| `WidescreenStoryboard` | 0 or 1 | Whether or not the storyboard allows widescreen viewing | 0 |
+| `SamplesMatchPlaybackRate` | 0 or 1 | Whether or not sound samples will change rate when playing with speed-changing mods | 0 |
+
+| `Bookmarks` | Comma-separated list of integers | Time in milliseconds of bookmarks |
+| `DistanceSpacing` | Decimal | Distance snap multiplier |
+| `BeatDivisor` | Decimal | Beat snap divisor |
+| `GridSize` | Integer | Grid size |
+| `TimelineZoom` | Decimal | Scale factor for the object timeline |
+
+| `Title` | String | Romanised song title |
+| `TitleUnicode` | String | Song title |
+| `Artist` | String | Romanised song artist |
+| `ArtistUnicode` | String | Song artist |
+| `Creator` | String | Beatmap creator |
+| `Version` | String | Difficulty name |
+| `Source` | String | Original media the song was produced for |
+| `Tags` | Space-separated list of strings | Search terms |
+| `BeatmapID` | Integer | Beatmap ID |
+| `BeatmapSetID` | Integer | Beatmapset ID |
+
+| `HPDrainRate` | Decimal | HP setting (0–10) |
+| `CircleSize` | Decimal | CS setting (0–10) |
+| `OverallDifficulty` | Decimal | OD setting (0–10) |
+| `ApproachRate` | Decimal | AR setting (0–10) |
+| `SliderMultiplier` | Decimal | Base slider velocity in hecto-[osu! pixels](/wiki/Glossary#osupixel) per beat <!-- TODO: this prefix sounds awful ಠ_ಠ --> |
+| `SliderTickRate` | Decimal | Amount of slider ticks per beat |
