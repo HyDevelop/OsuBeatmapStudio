@@ -9,7 +9,7 @@
  * @author Vanilla (https://github.com/VergeDX)
  * @since 2020-05-19 17:28
  */
-fun main(args: Array<String>)
+fun main()
 {
     val test = object {}.javaClass.getResource("/MdConverter.txt").readText()
             .replace("([`\r])".toRegex(), "")
@@ -30,7 +30,7 @@ fun main(args: Array<String>)
 
         // Split
         val split = line.split("\\|").toTypedArray()
-        val varName = ("" + split[1][0]).toLowerCase() + split[1].substring(1)
+        val varName = split[1][0].toLowerCase() + split[1].substring(1)
         val type = split[2]
         val description = split[3]
         var defaultValue = split.getOrElse(4) {""}
@@ -42,7 +42,7 @@ fun main(args: Array<String>)
         }
         if (type == "String")
         {
-            defaultValue = "\"" + defaultValue + "\""
+            defaultValue = "\"$defaultValue\""
         }
         if (!defaultValue.isEmpty())
         {
@@ -52,5 +52,6 @@ fun main(args: Array<String>)
         // Add line
         output.append(String.format("\n    // %s \n    var %s: %s%s,\n", description, varName, type, defaultValue))
     }
+
     println(output)
 }
