@@ -29,7 +29,7 @@ fun main()
         }
 
         // Split
-        val split = line.split("\\|").toTypedArray()
+        val split = line.split("|").toTypedArray()
         val varName = split[1][0].toLowerCase() + split[1].substring(1)
         val type = split[2]
         val description = split[3]
