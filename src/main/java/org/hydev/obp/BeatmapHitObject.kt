@@ -28,7 +28,7 @@ class BeatmapHitObject(
     var hitSound: BitSet,
 
     // Extra parameters specific to the object's type.
-    var objectParams: List<Int>,
+    var objectParams: ObjectParams,
 
     // Information about which samples are played when the object is hit.
     // It is closely related to hitSound; see the hitsounds section.
@@ -39,9 +39,17 @@ class BeatmapHitObject(
     var hitSampleFile: String = ""
 )
 {
-    fun isHitCircle() = type.get(0);
-    fun isSlider() = type.get(1);
-    fun isNewCombo() = type.get(2);
-    fun isSpinner() = type.get(3);
-    fun isManiaHold() = type.get(7);
+    fun isHitCircle() = type.get(0)
+    fun isSlider() = type.get(1)
+    fun isNewCombo() = type.get(2)
+    fun isSpinner() = type.get(3)
+    fun isManiaHold() = type.get(7)
+
+    /**
+     * Object params
+     */
+    class ObjectParams(var raw: String)
+    {
+        var split = raw.split(",")
+    }
 }
