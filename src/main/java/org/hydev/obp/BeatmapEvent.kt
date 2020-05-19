@@ -3,7 +3,8 @@ package org.hydev.obp
 import kotlinx.serialization.Serializable
 
 /**
- * TODO: Write a description for this class!
+ * Beatmap Event
+ * https://github.com/ppy/osu-wiki/blob/master/wiki/osu!_File_Formats/Osu_(file_format)/en.md#events
  * <p>
  * Class created by the HyDEV Team on 2020-05-19!
  *
