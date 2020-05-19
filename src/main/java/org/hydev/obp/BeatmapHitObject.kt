@@ -33,5 +33,8 @@ class BeatmapHitObject(
     // Information about which samples are played when the object is hit.
     // It is closely related to hitSound; see the hitsounds section.
     // If it is not written, it defaults to 0:0:0:0:.
-    var hitSample: List<Int> = listOf(0, 0, 0, 0)
+    var hitSample: List<Int> = listOf(0, 0, 0, 0),
+
+    // Hit sample file name
+    var hitSampleFile: String = ""
 )
