@@ -25,3 +25,10 @@ class BeatmapEvent(
     // (Comma-separated list): Extra parameters specific to the event's type.
     var eventParams: String = ""
 )
+{
+    /**
+     * Getter for EventParams
+     */
+    val eventParamsList: List<String>
+        get() = eventParams.split("");
+}
