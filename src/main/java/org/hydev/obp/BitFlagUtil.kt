@@ -19,7 +19,7 @@ object BitFlagUtil
      * Check a bitwise flag is on or off
      */
     @JvmStatic
-    fun isOn(num: Int, flag: Int): Boolean
+    fun contains(num: Int, flag: Int): Boolean
     {
         val power = 2.0.pow(flag).toInt();
         return num.and(power) == power;
