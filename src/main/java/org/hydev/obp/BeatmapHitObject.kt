@@ -38,3 +38,10 @@ class BeatmapHitObject(
     // Hit sample file name
     var hitSampleFile: String = ""
 )
+{
+    fun isHitCircle() = type.get(0);
+    fun isSlider() = type.get(1);
+    fun isNewCombo() = type.get(2);
+    fun isSpinner() = type.get(3);
+    fun isManiaHold() = type.get(7);
+}
