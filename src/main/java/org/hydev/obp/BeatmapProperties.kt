@@ -146,3 +146,10 @@ class BeatmapProperties(
     // Amount of slider ticks per beat
     var sliderTickRate: Double
 )
+{
+    val bookmarksList: List<Long>
+        get() = bookmarks.split(",").map { it.toLong() }
+
+    val tagsList: List<String>
+        get() = tags.split(" ")
+}
