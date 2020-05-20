@@ -1,5 +1,6 @@
 package org.hydev.obp.objects
 
+import org.hydev.obp.Beatmap
 import java.util.*
 
 /**
@@ -13,7 +14,7 @@ import java.util.*
  * @author Vanilla (https://github.com/VergeDX)
  * @since 2020-05-19 19:04
  */
-open class HitCircle
+open class HitCircle(var beatmap: Beatmap)
 {
     // Position in osu! pixels of the object.
     var x: Int = -1
