@@ -51,3 +51,13 @@ class SliderParams(raw: String) : ObjectParams(raw)
 
     }
 }
+
+/**
+ * Params for Spinners
+ * (endTime)
+ */
+class SpinnerParams(raw: String) : ObjectParams(raw)
+{
+    // End time of the spinner, in milliseconds from the beginning of the beatmap's audio.
+    var endTime: Int = split[0].toInt();
+}
