@@ -13,30 +13,30 @@ import java.util.*
  * @author Vanilla (https://github.com/VergeDX)
  * @since 2020-05-19 19:04
  */
-class HitCircle(
-
+open class HitCircle
+{
     // Position in osu! pixels of the object.
-    var x: Int,
-    var y: Int,
+    var x: Int = -1
+    var y: Int = -1
 
     // Time when the object is to be hit, in milliseconds from the beginning of the beatmap's audio.
-    var time: Int,
+    var time: Int = -1
 
     // Bit flags indicating the type of the object.
-    var type: BitSet,
+    var type: BitSet = BitSet()
 
     // Bit flags indicating the hitsound applied to the object.
-    var hitSound: BitSet,
+    var hitSound: BitSet = BitSet()
 
     // Information about which samples are played when the object is hit.
     // It is closely related to hitSound; see the hitsounds section.
     // If it is not written, it defaults to 0:0:0:0:.
-    var hitSample: List<Int> = listOf(0, 0, 0, 0),
+    var hitSample: List<Int> = listOf(0, 0, 0, 0)
 
     // Hit sample file name
     var hitSampleFile: String = ""
-)
-{
+
+    // Bitset methods
     fun isHitCircle() = type.get(0)
     fun isSlider() = type.get(1)
     fun isNewCombo() = type.get(2)
