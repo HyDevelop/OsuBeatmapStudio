@@ -61,3 +61,13 @@ class SpinnerParams(raw: String) : ObjectParams(raw)
     // End time of the spinner, in milliseconds from the beginning of the beatmap's audio.
     var endTime: Int = split[0].toInt();
 }
+
+/**
+ * Params for Holds (mania only)
+ * (endTime)
+ */
+class ManiaHoldParams(raw: String) : ObjectParams(raw)
+{
+    // End time of the hold, in milliseconds from the beginning of the beatmap's audio.
+    var endTime: Int = split[0].toInt();
+}
