@@ -3,7 +3,8 @@ package org.hydev.obp
 import java.util.*
 
 /**
- * TODO: Write a description for this class!
+ * Hit Object!
+ * https://github.com/ppy/osu-wiki/blob/master/wiki/osu!_File_Formats/Osu_(file_format)/en.md#hit-objects
  * <p>
  * Class created by the HyDEV Team on 2020-05-19!
  *
@@ -26,9 +27,6 @@ class BeatmapHitObject(
 
     // Bit flags indicating the hitsound applied to the object.
     var hitSound: BitSet,
-
-    // Extra parameters specific to the object's type.
-    var objectParams: ObjectParams,
 
     // Information about which samples are played when the object is hit.
     // It is closely related to hitSound; see the hitsounds section.
