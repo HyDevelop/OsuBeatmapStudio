@@ -44,12 +44,4 @@ class BeatmapHitObject(
     fun isNewCombo() = type.get(2)
     fun isSpinner() = type.get(3)
     fun isManiaHold() = type.get(7)
-
-    /**
-     * Object params
-     */
-    class ObjectParams(var raw: String)
-    {
-        var split = raw.split(",")
-    }
 }
