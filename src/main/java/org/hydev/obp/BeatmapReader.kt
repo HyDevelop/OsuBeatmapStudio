@@ -66,6 +66,9 @@ object BeatmapReader
 
                 // Reading events
                 EVENTS -> { beatmap.events.add(BeatmapEvent(line)) }
+
+                // Reading timing points
+                TIMINGS -> { beatmap.timings.add(BeatmapTimingPoint(line)) }
             }
         }
     }
