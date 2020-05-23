@@ -51,7 +51,11 @@ object BeatmapReader
             {
                 state = if (line == GENERAL || line == EDITOR || line == METADATA || line == DIFFICULTY) GENERAL
                 else line
+                continue
             }
+
+            // Empty lines or comments
+            if (line.isBlank() || line.startsWith("//")) continue
 
             // Reading data
             when (state)
