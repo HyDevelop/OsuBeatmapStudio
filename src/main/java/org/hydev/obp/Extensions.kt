@@ -6,3 +6,5 @@ fun String.toBoolean(): Boolean
 }
 
 fun Boolean.num(): String = if (this) "1" else "0"
+
+fun List<String>.from(from: Int) = subList(from, size)

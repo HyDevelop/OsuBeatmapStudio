@@ -34,7 +34,7 @@ class BeatmapEvent()
         val split = line.split(",")
         eventType = split[0]
         startTime = split[1].toInt()
-        eventParams = ArrayList(split.subList(2, split.size))
+        eventParams = ArrayList(split.from(2))
     }
 
     /**
