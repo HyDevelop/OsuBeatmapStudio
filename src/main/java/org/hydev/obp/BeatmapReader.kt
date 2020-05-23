@@ -142,5 +142,18 @@ object BeatmapReader
             }
             hitSample = next[0].split(":")
         }
+
+        // Assign universal properties
+        hit.apply {
+            this.x = x
+            this.y = y
+            this.time = time
+            this.type = type
+            this.hitSound = hitSound
+            this.hitSample = ArrayList(hitSample.subList(0, hitSample.size - 1).map { it.toInt() })
+            this.hitSampleFile = if (hitSample.size > 4) hitSample.from(5).joinToString(",") else ""
+        }
+
+        return hit;
     }
 }
