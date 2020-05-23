@@ -1,5 +1,6 @@
 package org.hydev.obp
 
+import java.lang.StringBuilder
 import java.util.*
 
 fun String.toBoolean(): Boolean
@@ -23,3 +24,5 @@ fun BitSet.num(): Long
     }
     return value
 }
+
+fun StringBuilder.line(a: Any = ""): StringBuilder = append(a).append("\n")
