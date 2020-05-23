@@ -17,4 +17,11 @@ class BitFlags(var num: Int = 0)
         val bit = 1 shl flag
         return num and bit == bit
     }
+
+    fun set(flag: Int, on: Boolean)
+    {
+        val bit = 1 shl flag
+        num = if (on) num or bit
+        else num and bit.inv()
+    }
 }
