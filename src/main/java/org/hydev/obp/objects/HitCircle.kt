@@ -43,4 +43,17 @@ open class HitCircle(var beatmap: Beatmap)
     fun isNewCombo() = type.get(2)
     fun isSpinner() = type.get(3)
     fun isManiaHold() = type.get(7)
+
+    /**
+     * To line format
+     */
+    override fun toString(): String
+    {
+        return "$x,$y,$time,$type,$hitSound,${param()}"
+    }
+
+    /**
+     * Object param part of the resulting string
+     */
+    open fun param() = hitSample.joinToString(":", "", ":") + hitSampleFile
 }
