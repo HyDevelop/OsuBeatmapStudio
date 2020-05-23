@@ -56,9 +56,9 @@ Add this dependency to your `<dependencies>` tag:
 
 ```xml
 <dependency>
-    <groupId>com.github.hydevelop</groupId>
+    <groupId>com.github.HyDevelop</groupId>
     <artifactId>OsuBeatmapParser</artifactId>
-    <version>4.15.0.1052</version>
+    <version>1.1.0.94</version>
 </dependency>
 ```
 
@@ -66,13 +66,13 @@ Add this dependency to your `<dependencies>` tag:
 
 ```gradle
 dependencies {
-    implementation 'com.github.hydevelop:PicqBotX:4.15.0.1052'
+    implementation 'com.github.HyDevelop:OsuBeatmapParser:1.1.0.94'
 }
 ```
 
 The dependency would be ready once you reimport.
 
-If you are not using maven or gradle, [Import from Other Package Managers](https://jitpack.io/#hydevelop/OsuBeatmapParser/)
+If you are not using maven or gradle, [Import from Other Package Managers](https://jitpack.io/#HyDevelop/OsuBeatmapParser/1.1.0.94)
 
 <br>
 
