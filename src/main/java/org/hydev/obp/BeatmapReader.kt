@@ -38,6 +38,9 @@ object BeatmapReader
      */
     fun parse(osu: String)
     {
+        val beatmap = Beatmap()
+
+        // What is it currently scanning
         var state: String = "version"
 
         // Cannot use Split because we're not sure if it's \n or \r\n
@@ -48,6 +51,18 @@ object BeatmapReader
             {
                 state = if (line == GENERAL || line == EDITOR || line == METADATA || line == DIFFICULTY) GENERAL
                 else line
+            }
+
+            // Reading data
+            when (state)
+            {
+                // Reading meta data about the map
+                GENERAL ->
+                {
+                    // Line format: Property : Value
+                    val split = line.split(":")
+                    beatmap.properties.assign(split[0].trim(), split[1].trim())
+                }
             }
         }
     }
