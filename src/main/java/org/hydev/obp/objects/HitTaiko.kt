@@ -17,4 +17,8 @@ class HitTaiko(beatmap: Beatmap) : HitCircle(beatmap)
     var red: Boolean
         get() = !(hitSound.get(1) or hitSound.get(3))
         set(value) { hitSound.set(1, value) }
+
+    var big: Boolean
+        get() = hitSound.get(2)
+        set(value) { hitSound.set(2, value) }
 }
