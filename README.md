@@ -9,7 +9,7 @@
 <a href="#maven">Get Started</a>&nbsp;&nbsp;
 <a href="#doc">Documentation</a>&nbsp;&nbsp;
 <a href="#qa">FAQ</a>&nbsp;&nbsp;
-<a href="#license">License</a>
+<a href="#license">License</a>&nbsp;&nbsp;
 <a href="README.cn.md">中文</a>
 </h5>
   <br>
