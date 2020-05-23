@@ -36,4 +36,12 @@ class BeatmapEvent()
         startTime = split[1].toInt()
         eventParams = ArrayList(split.subList(2, split.size))
     }
+
+    /**
+     * To line format
+     */
+    override fun toString(): String
+    {
+        return "$eventType,$startTime,${eventParams.joinToString(",")}"
+    }
 }
