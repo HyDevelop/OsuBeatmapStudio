@@ -119,13 +119,17 @@ You can manipulate it like an object. Almost every property is parsed (except fo
 Read some code!<br>
 ![https://i.imgur.com/0wus8KB.png](https://i.imgur.com/0wus8KB.png)
 
+<br>
 
 <a name="qa"></a>
 Frequently Asked Questions:
 --------
 
+### Q: How are you?
 
+I'm great, how are you?
 
+<br>
 
 <a name="license"></a>
 License: MIT
