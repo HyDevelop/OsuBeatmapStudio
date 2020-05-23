@@ -33,4 +33,12 @@ class BeatmapColor(
         val rgb = split[1].trim().split(",").map { it.toInt() }
         color = Color(rgb[0], rgb[1], rgb[2])
     }
+
+    /**
+     * To line format
+     */
+    override fun toString(): String
+    {
+        return "Combo$combo : ${color.red},${color.green},${color.blue}"
+    }
 }
