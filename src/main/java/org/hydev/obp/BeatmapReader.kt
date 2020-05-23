@@ -96,5 +96,17 @@ object BeatmapReader
         val type = BitSet(split[3].toInt())
         val hitSound = BitSet(split[4].toInt())
         val next = split.subList(5, split.size)
+
+        // Hit to be parsed
+        val hit: HitCircle
+        val hitSample: List<String>
+
+        // Mania hold (endTime:hitSample)
+        if (type.get(7))
+        {
+            val params = next[0].split(":")
+            hit = HitManiaHold(beatmap).apply { endTime = params[0].toInt() }
+            hitSample = params.subList(1, params.size)
+        }
     }
 }
