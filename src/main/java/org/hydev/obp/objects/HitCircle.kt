@@ -57,4 +57,17 @@ open class HitCircle(var beatmap: Beatmap)
      * Object param part of the resulting string
      */
     open fun param() = hitSample.joinToString(":", "", ":") + hitSampleFile
+
+    /**
+     * Copy the basics from another hit circle
+     */
+    fun copyFrom(other: HitCircle)
+    {
+        x = other.x
+        y = other.y
+        time = other.time
+        hitSound = other.hitSound
+        hitSample = other.hitSample
+        hitSampleFile = other.hitSampleFile
+    }
 }
