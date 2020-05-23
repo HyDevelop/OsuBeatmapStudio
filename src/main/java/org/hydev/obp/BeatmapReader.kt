@@ -122,7 +122,7 @@ object BeatmapReader
             val curve = next[0].split("|")
             hit = HitSlider(beatmap).apply {
                 curveType = curve[0]
-                curvePoints = ArrayList(curve.from(1).map { Point(it.split(":")[0].toInt(), it.split(":")[1].toInt()) })
+                curvePoints = ArrayList(curve.from(1).map { it.split(":") }.map { Point(it[0].toInt(), it[1].toInt()) })
                 slides = next[1].toInt()
                 length = next[2].toDouble()
                 edgeSounds = ArrayList(next[3].split("|").map { it.toInt() })
