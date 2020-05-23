@@ -162,7 +162,7 @@ class BeatmapProperties()
             "beatdivisor" -> beatDivisor = v.toDouble()
             "beatmapid" -> beatmapID = v.toInt()
             "beatmapsetid" -> beatmapSetID = v.toInt()
-            "bookmarks" -> bookmarks = v.split(",").map { it.toInt() }
+            "bookmarks" -> bookmarks = ArrayList(v.split(",").map { it.toInt() })
             "circlesize" -> circleSize = v.toDouble()
             "countdown" -> countdown = v.toInt()
             "countdownoffset" -> countdownOffset = v.toInt()
@@ -185,7 +185,7 @@ class BeatmapProperties()
             "specialstyle" -> specialStyle = v.toBoolean()
             "stackleniency" -> stackLeniency = v.toDouble()
             "storyfireinfront" -> storyFireInFront = v.toBoolean()
-            "tags" -> tags = v.split(" ")
+            "tags" -> tags = ArrayList(v.split(" "))
             "timelinezoom" -> timelineZoom = v.toDouble()
             "title" -> title = v
             "titleunicode" -> titleUnicode = v
