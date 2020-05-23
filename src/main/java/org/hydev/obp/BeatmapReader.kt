@@ -63,6 +63,19 @@ object BeatmapReader
                     val split = line.split(":")
                     beatmap.properties.assign(split[0].trim(), split[1].trim())
                 }
+
+                // Reading events
+                EVENTS ->
+                {
+                    // Line format: eventType,startTime,eventParams
+                    val split = line.split(",")
+                    val event = BeatmapEvent().apply {
+                        eventType = split[0];
+                        startTime = split[1].toInt()
+                        eventParams = ArrayList(split.subList(2, split.size))
+                    }
+                    beatmap.events.add(event)
+                }
             }
         }
     }
