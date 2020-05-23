@@ -57,7 +57,7 @@ Add this dependency to your `<dependencies>` tag:
 ```xml
 <dependency>
     <groupId>com.github.hydevelop</groupId>
-    <artifactId>PicqBotX</artifactId>
+    <artifactId>OsuBeatmapParser</artifactId>
     <version>4.15.0.1052</version>
 </dependency>
 ```
@@ -77,14 +77,53 @@ If you are not using maven or gradle, [Import from Other Package Managers](https
 <br>
 
 <a name="doc"></a>
-Documentation:
+Documentation
 --------
 
+### 1. How to read a beatmap
+
+#### Kotlin
+
+```kt
+val beatmap = BeatmapReader.parse(File("file_name.osu"))
+// or
+val beatmap = BeatmapReader.parse(beatmapText)
+```
+
+#### Java
+
+```java
+Beatmap beatmap = BeatmapReader.parse(new File("file_name.osu"));
+// or
+Beatmap beatmap = BeatmapReader.parse(beatmapText);
+```
+
+### 2. How to save a beatmap
+
+#### Kotlin
+
+```kt
+File("output.osu").writeText(beatmap.toString())
+```
+
+#### Java
+
+```java
+PrintWriter out = new PrintWriter("output.osu");
+out.print(beatmap);
+```
+
+### 3. What can you do with a beatmap
+
+You can manipulate it like an object. Almost every property is parsed (except for color properties that I'm not sure about).<br>
+Read some code!<br>
+![https://i.imgur.com/0wus8KB.png](https://i.imgur.com/0wus8KB.png)
 
 
 <a name="qa"></a>
 Frequently Asked Questions:
 --------
+
 
 
 
