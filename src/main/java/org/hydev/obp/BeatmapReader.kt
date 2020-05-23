@@ -44,8 +44,8 @@ object BeatmapReader
         var state: String = "version"
 
         // Cannot use Split because we're not sure if it's \n or \r\n
-        BufferedReader(StringReader(osu)).lines().forEach { line ->
-
+        for (line in BufferedReader(StringReader(osu)).lines().iterator())
+        {
             // Switching Sections
             if (line.startsWith("["))
             {
