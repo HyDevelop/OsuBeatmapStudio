@@ -16,6 +16,6 @@ import java.util.*
 open class HitMania(beatmap: Beatmap) : HitCircle(beatmap)
 {
     var column: Int
-        get() = (beatmap.properties.circleSize / 512 / x).toInt()
-        set(value) { x = (value * beatmap.properties.circleSize / 512).toInt() }
+        get() = (beatmap.properties.circleSize / 512 * x).toInt()
+        set(value) { x = ((value + 0.5) / (beatmap.properties.circleSize / 512)).toInt() }
 }
