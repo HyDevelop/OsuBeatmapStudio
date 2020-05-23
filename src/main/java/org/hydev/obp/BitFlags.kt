@@ -12,4 +12,9 @@ package org.hydev.obp
  */
 class BitFlags(var num: Int = 0)
 {
+    fun get(flag: Int): Boolean
+    {
+        val bit = 1 shl flag
+        return num and bit == bit
+    }
 }
