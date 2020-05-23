@@ -1,8 +1,12 @@
 package org.hydev.obp
 
+import org.hydev.obp.objects.*
+import java.awt.Point
 import java.io.BufferedReader
 import java.io.File
 import java.io.StringReader
+import java.util.*
+import kotlin.collections.ArrayList
 
 /**
  * Beatmap parser that parses .osu files to Beatmap objects.
@@ -73,7 +77,16 @@ object BeatmapReader
                 EVENTS -> { beatmap.events.add(BeatmapEvent(line)) }
                 TIMINGS -> { beatmap.timings.add(BeatmapTimingPoint(line)) }
                 COLORS -> { beatmap.colors.add(BeatmapColor(line)) }
+                HITS -> { beatmap.objects.add(parseHitObject(beatmap, line)) }
             }
         }
+    }
+
+    /**
+     * Parse a hit object line
+     */
+    fun parseHitObject(beatmap: Beatmap, line: String): HitCircle
+    {
+
     }
 }
