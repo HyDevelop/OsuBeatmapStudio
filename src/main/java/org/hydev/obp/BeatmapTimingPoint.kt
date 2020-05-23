@@ -59,4 +59,12 @@ class BeatmapTimingPoint(
         uninherited = split[6].toBoolean()
         effects = BitSet(split[7].toInt())
     }
+
+    /**
+     * To line format
+     */
+    override fun toString(): String
+    {
+        return "$time,$beatLength,$meter,$sampleSet,$sampleIndex,$volume,${uninherited.num()},$effects"
+    }
 }
