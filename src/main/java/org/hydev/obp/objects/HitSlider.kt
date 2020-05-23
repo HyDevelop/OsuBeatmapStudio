@@ -39,4 +39,13 @@ class HitSlider(beatmap: Beatmap) : HitCircle(beatmap)
     // Each set is in the format normalSet:additionSet,
     // with the same meaning as in the hitsounds section.
     var edgeSets: ArrayList<String> = ArrayList()
+
+    /**
+     * To param line
+     */
+    override fun param(): String
+    {
+        val curve = "$curveType|${curvePoints.map { "${it.x}:${it.y}" }.joinToString("|")}";
+        return "$curve,$slides,$length,${edgeSounds.joinToString("|")},${edgeSets.joinToString("|")},${super.param()}"
+    }
 }
