@@ -5,7 +5,7 @@ plugins {
 }
 
 group 'org.hydev'
-version '1.1.2.108'
+version '1.1.2.109'
 
 repositories {
     mavenCentral()

@@ -58,7 +58,7 @@ Add this dependency to your `<dependencies>` tag:
 <dependency>
     <groupId>com.github.HyDevelop</groupId>
     <artifactId>OsuBeatmapParser</artifactId>
-    <version>1.1.2.108</version>
+    <version>1.1.2.109</version>
 </dependency>
 ```
 
@@ -66,13 +66,13 @@ Add this dependency to your `<dependencies>` tag:
 
 ```gradle
 dependencies {
-    implementation 'com.github.HyDevelop:OsuBeatmapParser:1.1.2.108'
+    implementation 'com.github.HyDevelop:OsuBeatmapParser:1.1.2.109'
 }
 ```
 
 The dependency would be ready once you reimport.
 
-If you are not using maven or gradle, [Import from Other Package Managers](https://jitpack.io/#HyDevelop/OsuBeatmapParser/1.1.2.108)
+If you are not using maven or gradle, [Import from Other Package Managers](https://jitpack.io/#HyDevelop/OsuBeatmapParser/1.1.2.109)
 
 <br>
 
