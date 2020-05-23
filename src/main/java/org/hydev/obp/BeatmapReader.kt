@@ -115,5 +115,20 @@ object BeatmapReader
             hit = HitSpinner(beatmap).apply { endTime = next[0].toInt() }
             hitSample = next[1].split(":")
         }
+
+        // Slider (curveType|curvePoints,slides,length,edgeSounds,edgeSets,hitSample)
+        else if (type.get(1))
+        {
+            val curve = next[0].split("|")
+            hit = HitSlider(beatmap).apply {
+                curveType = curve[0]
+                curvePoints = ArrayList(curve.from(1).map { Point(it.split(":")[0].toInt(), it.split(":")[1].toInt()) })
+                slides = next[1].toInt()
+                length = next[2].toDouble()
+                edgeSounds = ArrayList(next[3].split("|").map { it.toInt() })
+                edgeSets = ArrayList(next[4].split("|"))
+            }
+            hitSample = next[5].split(":")
+        }
     }
 }
