@@ -87,6 +87,14 @@ object BeatmapReader
      */
     fun parseHitObject(beatmap: Beatmap, line: String): HitCircle
     {
+        val split = line.split(",")
 
+        // Universal properties
+        val x = split[0].toInt()
+        val y = split[1].toInt()
+        val time = split[2].toInt()
+        val type = BitSet(split[3].toInt())
+        val hitSound = BitSet(split[4].toInt())
+        val next = split.subList(5, split.size)
     }
 }
