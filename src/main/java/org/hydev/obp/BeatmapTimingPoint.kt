@@ -43,10 +43,12 @@ class BeatmapTimingPoint(
     var effects: BitSet
 )
 {
+    constructor(): this(-1, -1.0, -1, -1, -1, -1, false, BitSet())
+
     /**
      * Parse from line
      */
-    constructor(line: String)
+    constructor(line: String): this()
     {
         // Line format: time,beatLength,meter,sampleSet,sampleIndex,volume,uninherited,effects
         val split = line.split(",")

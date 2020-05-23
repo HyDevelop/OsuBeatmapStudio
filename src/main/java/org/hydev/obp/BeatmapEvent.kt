@@ -28,7 +28,7 @@ class BeatmapEvent()
     /**
      * Parse from line
      */
-    constructor(line: String)
+    constructor(line: String): this()
     {
         // Line format: eventType,startTime,eventParams
         val split = line.split(",")
