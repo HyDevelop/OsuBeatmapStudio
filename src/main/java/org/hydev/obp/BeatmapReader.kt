@@ -32,7 +32,7 @@ object BeatmapReader
     /**
      * Parse a file
      */
-    fun parse(file: File)
+    fun parse(file: File): Beatmap
     {
         return parse(file.readText())
     }
@@ -40,7 +40,7 @@ object BeatmapReader
     /**
      * Parse a string
      */
-    fun parse(osu: String)
+    fun parse(osu: String): Beatmap
     {
         val beatmap = Beatmap()
 
@@ -80,6 +80,8 @@ object BeatmapReader
                 HITS -> { beatmap.objects.add(parseHitObject(beatmap, line)) }
             }
         }
+
+        return beatmap
     }
 
     /**
