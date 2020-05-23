@@ -20,3 +20,17 @@ class BeatmapColor(
     // New color
     var color: Color
 )
+{
+    /**
+     * Parse from line
+     */
+    constructor(line: String)
+    {
+        // Line format: eventType,startTime,eventParams
+        val split = line.split(":")
+        combo = split[0].trim().replace("Combo", "").toInt()
+
+        val rgb = split[1].trim().split(",").map { it.toInt() }
+        color = Color(rgb[0], rgb[1], rgb[2])
+    }
+}
