@@ -24,4 +24,6 @@ class BitFlags(var num: Int = 0)
         num = if (on) num or bit
         else num and bit.inv()
     }
+
+    override fun toString() = num.toString()
 }
