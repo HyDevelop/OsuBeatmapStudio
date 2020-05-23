@@ -39,8 +39,8 @@ fun main()
         val line = "${name.capitalize()}:$" +
             when (type)
             {
-                "Boolean" -> "{$name.num()}"
-                else -> name
+                "Boolean" -> "{${name.decapitalize()}.num()}"
+                else -> name.decapitalize()
             }
 
         output.append(line).append("\n")
