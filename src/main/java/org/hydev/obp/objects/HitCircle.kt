@@ -18,7 +18,7 @@ import java.util.*
 open class HitCircle(var beatmap: Beatmap)
 {
     // Position in osu! pixels of the object.
-    open var x: Int = -1
+    var x: Int = -1
     var y: Int = -1
 
     // Time when the object is to be hit, in milliseconds from the beginning of the beatmap's audio.

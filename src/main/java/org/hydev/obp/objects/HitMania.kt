@@ -15,8 +15,7 @@ import java.util.*
  */
 open class HitMania(beatmap: Beatmap) : HitCircle(beatmap)
 {
-    // x for mania is the key index.
-    override var x: Int = super.x
-        get() = (beatmap.properties.circleSize / 512 / field).toInt()
-        set(value) { field = (value * beatmap.properties.circleSize / 512).toInt() }
+    var column: Int
+        get() = (beatmap.properties.circleSize / 512 / x).toInt()
+        set(value) { x = (value * beatmap.properties.circleSize / 512).toInt() }
 }
