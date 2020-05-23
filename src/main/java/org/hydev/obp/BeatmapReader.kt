@@ -16,6 +16,14 @@ import java.io.StringReader
  */
 object BeatmapReader
 {
+    const val GENERAL = "[general]"
+    const val EDITOR = "[editor]"
+    const val METADATA = "[metadata]"
+    const val DIFFICULTY = "[difficulty]"
+    const val EVENTS = "[events]"
+    const val TIMINGS = "[timingpoints]"
+    const val COLORS = "[colours]"
+    const val HITS = "[hitobjects]"
 
     /**
      * Parse a file
