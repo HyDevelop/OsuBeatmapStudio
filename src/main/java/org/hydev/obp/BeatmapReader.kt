@@ -61,7 +61,8 @@ object BeatmapReader
                 {
                     // Line format: Property : Value
                     val split = line.split(":")
-                    beatmap.properties.assign(split[0].trim(), split[1].trim())
+                    val name = split[0]
+                    beatmap.properties.assign(name.trim(), line.substring(name.length + 1).trim())
                 }
 
                 // Reading events
