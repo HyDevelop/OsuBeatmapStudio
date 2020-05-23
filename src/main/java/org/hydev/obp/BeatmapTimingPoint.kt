@@ -67,6 +67,6 @@ class BeatmapTimingPoint(
      */
     override fun toString(): String
     {
-        return "$time,$beatLength,$meter,$sampleSet,$sampleIndex,$volume,${uninherited.num()},$effects"
+        return "$time,$beatLength,$meter,$sampleSet,$sampleIndex,$volume,${uninherited.num()},${effects.num()}"
     }
 }

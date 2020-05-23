@@ -1,6 +1,7 @@
 package org.hydev.obp.objects
 
 import org.hydev.obp.Beatmap
+import org.hydev.obp.num
 import java.util.*
 
 /**
@@ -49,7 +50,7 @@ open class HitCircle(var beatmap: Beatmap)
      */
     override fun toString(): String
     {
-        return "$x,$y,$time,$type,$hitSound,${param()}"
+        return "$x,$y,$time,${type.num()},${hitSound.num()},${param()}"
     }
 
     /**
