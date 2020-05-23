@@ -1,6 +1,7 @@
 package org.hydev.obp
 
 import org.hydev.obp.objects.HitCircle
+import java.lang.StringBuilder
 
 /**
  * Beatmap
@@ -14,9 +15,44 @@ import org.hydev.obp.objects.HitCircle
  */
 class Beatmap
 {
-    var properties: BeatmapProperties = BeatmapProperties();
-    var events: ArrayList<BeatmapEvent> = ArrayList();
-    var colors: ArrayList<BeatmapColor> = ArrayList();
-    var timings: ArrayList<BeatmapTimingPoint> = ArrayList();
-    var objects: ArrayList<HitCircle> = ArrayList();
+    var properties: BeatmapProperties = BeatmapProperties()
+    var events: ArrayList<BeatmapEvent> = ArrayList()
+    var colors: ArrayList<BeatmapColor> = ArrayList()
+    var timings: ArrayList<BeatmapTimingPoint> = ArrayList()
+    var objects: ArrayList<HitCircle> = ArrayList()
+
+    /**
+     * To beatmap string
+     */
+    override fun toString(): String
+    {
+        val output = StringBuilder("osu file format v14\n\n$properties\n\n")
+
+        if (events.isNotEmpty())
+        {
+            output.line()
+            output.line("[Events]")
+            events.forEach { output.line(it) }
+        }
+        if (timings.isNotEmpty())
+        {
+            output.line()
+            output.line("[TimingPoints]")
+            timings.forEach { output.line(it) }
+        }
+        if (colors.isNotEmpty())
+        {
+            output.line()
+            output.line("[Colours]")
+            colors.forEach { output.line(it) }
+        }
+        if (objects.isNotEmpty())
+        {
+            output.line()
+            output.line("[HitObjects]")
+            objects.forEach { output.line(it) }
+        }
+
+        return output.toString();
+    }
 }
