@@ -69,11 +69,10 @@ object BeatmapReader
                     beatmap.properties.assign(name.trim(), line.substring(name.length + 1).trim())
                 }
 
-                // Reading events
+                // Reading other entries
                 EVENTS -> { beatmap.events.add(BeatmapEvent(line)) }
-
-                // Reading timing points
                 TIMINGS -> { beatmap.timings.add(BeatmapTimingPoint(line)) }
+                COLORS -> { beatmap.colors.add(BeatmapColor(line)) }
             }
         }
     }
