@@ -23,5 +23,5 @@ class BeatmapEvent
     var startTime: Int = 0
 
     // (Comma-separated list): Extra parameters specific to the event's type.
-    var eventParams: String = ""
+    var eventParams: ArrayList<String> = ArrayList()
 }
