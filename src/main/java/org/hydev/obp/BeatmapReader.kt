@@ -38,6 +38,17 @@ object BeatmapReader
      */
     fun parse(osu: String)
     {
+        var state: String = "version"
 
+        // Cannot use Split because we're not sure if it's \n or \r\n
+        BufferedReader(StringReader(osu)).lines().forEach { line ->
+
+            // Switching Sections
+            if (line.startsWith("["))
+            {
+                state = if (line == GENERAL || line == EDITOR || line == METADATA || line == DIFFICULTY) GENERAL
+                else line
+            }
+        }
     }
 }
