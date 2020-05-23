@@ -17,4 +17,19 @@ import java.io.StringReader
 object BeatmapReader
 {
 
+    /**
+     * Parse a file
+     */
+    fun parse(file: File)
+    {
+        return parse(file.readText())
+    }
+
+    /**
+     * Parse a string
+     */
+    fun parse(osu: String)
+    {
+
+    }
 }
