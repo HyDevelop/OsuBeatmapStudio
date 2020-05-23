@@ -130,5 +130,17 @@ object BeatmapReader
             }
             hitSample = next[5].split(":")
         }
+
+        // Hit Circle
+        else
+        {
+            hit = when (beatmap.properties.mode)
+            {
+                1 -> HitTaiko(beatmap)
+                3 -> HitMania(beatmap)
+                else -> HitCircle(beatmap)
+            }
+            hitSample = next[0].split(":")
+        }
     }
 }
