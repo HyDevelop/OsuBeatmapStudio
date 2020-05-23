@@ -1,7 +1,7 @@
 package org.hydev.obp.objects
 
 import org.hydev.obp.Beatmap
-import org.hydev.obp.num
+import org.hydev.obp.BitFlags
 import java.util.*
 
 /**
@@ -25,10 +25,10 @@ open class HitCircle(var beatmap: Beatmap)
     var time: Int = -1
 
     // Bit flags indicating the type of the object.
-    var type: BitSet = BitSet()
+    var type: BitFlags = BitFlags()
 
     // Bit flags indicating the hitsound applied to the object.
-    var hitSound: BitSet = BitSet()
+    var hitSound: BitFlags = BitFlags()
 
     // Information about which samples are played when the object is hit.
     // It is closely related to hitSound; see the hitsounds section.
@@ -38,7 +38,7 @@ open class HitCircle(var beatmap: Beatmap)
     // Hit sample file name
     var hitSampleFile: String = ""
 
-    // Bitset methods
+    // BitFlags methods
     fun isHitCircle() = type.get(0)
     fun isSlider() = type.get(1)
     fun isNewCombo() = type.get(2)
@@ -50,7 +50,7 @@ open class HitCircle(var beatmap: Beatmap)
      */
     override fun toString(): String
     {
-        return "$x,$y,$time,${type.num()},${hitSound.num()},${param()}"
+        return "$x,$y,$time,$type,$hitSound,${param()}"
     }
 
     /**

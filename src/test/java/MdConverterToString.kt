@@ -36,6 +36,7 @@ fun main()
         val name = split[1]
         val type = split[2]
 
+        @Suppress("NAME_SHADOWING")
         val line = "${name.capitalize()}:$" +
             when (type)
             {

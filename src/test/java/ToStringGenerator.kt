@@ -1,6 +1,5 @@
 import org.hydev.obp.BeatmapProperties
-import java.lang.StringBuilder
-import java.util.*
+import org.hydev.obp.BitFlags
 import kotlin.reflect.full.createType
 import kotlin.reflect.full.declaredMemberProperties
 
@@ -27,7 +26,7 @@ fun main(args: Array<String>)
         val line = "${name.capitalize()}:$" +
             when (type)
             {
-                Boolean::class.createType(), BitSet::class.createType() -> "{$name.num()}"
+                Boolean::class.createType() -> "{$name.num()}"
                 else -> name
             }
 

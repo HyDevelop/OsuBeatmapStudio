@@ -1,7 +1,6 @@
 package org.hydev.obp.objects
 
 import org.hydev.obp.Beatmap
-import java.util.*
 
 /**
  * Mania key

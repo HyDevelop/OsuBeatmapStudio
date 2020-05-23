@@ -1,7 +1,6 @@
 package org.hydev.obp
 
 import org.hydev.obp.objects.HitCircle
-import java.lang.StringBuilder
 
 /**
  * Beatmap

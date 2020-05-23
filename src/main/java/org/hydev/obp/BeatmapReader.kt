@@ -5,8 +5,6 @@ import java.awt.Point
 import java.io.BufferedReader
 import java.io.File
 import java.io.StringReader
-import java.util.*
-import kotlin.collections.ArrayList
 
 /**
  * Beatmap parser that parses .osu files to Beatmap objects.
@@ -98,8 +96,8 @@ object BeatmapReader
         val x = split[0].toInt()
         val y = split[1].toInt()
         val time = split[2].toInt()
-        val type = BitSet(split[3].toInt())
-        val hitSound = BitSet(split[4].toInt())
+        val type = BitFlags(split[3].toInt())
+        val hitSound = BitFlags(split[4].toInt())
         val next = split.subList(5, split.size)
 
         // Hit to be parsed

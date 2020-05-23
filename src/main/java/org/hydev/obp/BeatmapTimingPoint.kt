@@ -1,7 +1,5 @@
 package org.hydev.obp
 
-import java.util.*
-
 /**
  * Beatmap timings
  * https://github.com/ppy/osu-wiki/blob/master/wiki/osu!_File_Formats/Osu_(file_format)/en.md#timing-points
@@ -40,10 +38,10 @@ class BeatmapTimingPoint(
     var uninherited: Boolean,
 
     // Bit flags that give the timing point extra effects. See [the effects section](#effects).
-    var effects: BitSet
+    var effects: BitFlags
 )
 {
-    constructor(): this(-1, -1.0, -1, -1, -1, -1, false, BitSet())
+    constructor(): this(-1, -1.0, -1, -1, -1, -1, false, BitFlags())
 
     /**
      * Parse from line
@@ -59,7 +57,7 @@ class BeatmapTimingPoint(
         sampleIndex = split[4].toInt()
         volume = split[5].toInt()
         uninherited = split[6].toBoolean()
-        effects = BitSet(split[7].toInt())
+        effects = BitFlags(split[7].toInt())
     }
 
     /**
@@ -67,6 +65,6 @@ class BeatmapTimingPoint(
      */
     override fun toString(): String
     {
-        return "$time,$beatLength,$meter,$sampleSet,$sampleIndex,$volume,${uninherited.num()},${effects.num()}"
+        return "$time,$beatLength,$meter,$sampleSet,$sampleIndex,$volume,${uninherited.num()},$effects"
     }
 }

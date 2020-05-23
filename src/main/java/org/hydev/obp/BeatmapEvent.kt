@@ -1,7 +1,5 @@
 package org.hydev.obp
 
-import kotlinx.serialization.Serializable
-
 /**
  * Beatmap Event
  * https://github.com/ppy/osu-wiki/blob/master/wiki/osu!_File_Formats/Osu_(file_format)/en.md#events
