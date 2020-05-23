@@ -13,7 +13,7 @@ import kotlinx.serialization.Serializable
  * @author Vanilla (https://github.com/VergeDX)
  * @since 2020-05-19 17:47
  */
-class BeatmapEvent
+class BeatmapEvent()
 {
     // Type of the event. Some events may be referred to by either a name or a number.
     var eventType: String = ""
@@ -24,4 +24,16 @@ class BeatmapEvent
 
     // (Comma-separated list): Extra parameters specific to the event's type.
     var eventParams: ArrayList<String> = ArrayList()
+
+    /**
+     * Parse from line
+     */
+    constructor(line: String)
+    {
+        // Line format: eventType,startTime,eventParams
+        val split = line.split(",")
+        eventType = split[0]
+        startTime = split[1].toInt()
+        eventParams = ArrayList(split.subList(2, split.size))
+    }
 }
