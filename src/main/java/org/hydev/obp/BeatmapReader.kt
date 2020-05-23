@@ -53,8 +53,9 @@ object BeatmapReader
             // Switching Sections
             if (line.startsWith("["))
             {
-                state = if (line == GENERAL || line == EDITOR || line == METADATA || line == DIFFICULTY) GENERAL
-                else line
+                val l = line.toLowerCase()
+                state = if (l == GENERAL || l == EDITOR || l == METADATA || l == DIFFICULTY) GENERAL
+                else l
                 continue
             }
 
