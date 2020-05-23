@@ -21,7 +21,7 @@ class HitSlider(beatmap: Beatmap) : HitCircle(beatmap)
     var curveType: String = ""
 
     // Points used to construct the slider. Each point is in the format x:y
-    var curvePoints: List<Point> = listOf()
+    var curvePoints: ArrayList<Point> = ArrayList()
 
     // Amount of times the player has to follow the slider's curve back-and-forth before the slider is complete.
     // It can also be interpreted as the repeat count plus one.
@@ -33,10 +33,10 @@ class HitSlider(beatmap: Beatmap) : HitCircle(beatmap)
     // Hitsounds that play when hitting edges of the slider's curve.
     // The first sound is the one that plays when the slider is first clicked,
     // and the last sound is the one that plays when the slider's end is hit.
-    var edgeSounds: List<Int> = listOf()
+    var edgeSounds: ArrayList<Int> = ArrayList()
 
     // Sample sets used for the edgeSounds.
     // Each set is in the format normalSet:additionSet,
     // with the same meaning as in the hitsounds section.
-    var edgeSets: List<String> = listOf()
+    var edgeSets: ArrayList<String> = ArrayList()
 }

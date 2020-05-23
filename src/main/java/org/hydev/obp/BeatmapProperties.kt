@@ -75,7 +75,7 @@ class BeatmapProperties()
     // Editor
 
     // Time in milliseconds of bookmarks
-    var bookmarks: List<Int> = listOf();
+    var bookmarks: ArrayList<Int> = ArrayList();
 
     // Distance snap multiplier
     var distanceSpacing: Double? = null;
@@ -114,7 +114,7 @@ class BeatmapProperties()
     var source: String = "";
 
     // Search terms
-    var tags: List<String> = listOf();
+    var tags: ArrayList<String> = ArrayList();
 
     // Beatmap ID
     var beatmapID: Int = -1;

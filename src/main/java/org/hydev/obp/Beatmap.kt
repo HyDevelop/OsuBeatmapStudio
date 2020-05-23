@@ -15,8 +15,8 @@ import org.hydev.obp.objects.HitCircle
 class Beatmap
 {
     var properties: BeatmapProperties = BeatmapProperties();
-    var events: List<BeatmapEvent> = listOf();
-    var colors: List<BeatmapColor> = listOf();
-    var timings: List<BeatmapTimingPoint> = listOf();
-    var objects: List<HitCircle> = listOf();
+    var events: ArrayList<BeatmapEvent> = ArrayList();
+    var colors: ArrayList<BeatmapColor> = ArrayList();
+    var timings: ArrayList<BeatmapTimingPoint> = ArrayList();
+    var objects: ArrayList<HitCircle> = ArrayList();
 }
