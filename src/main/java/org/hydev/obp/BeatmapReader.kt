@@ -32,6 +32,7 @@ object BeatmapReader
     /**
      * Parse a file
      */
+    @JvmStatic
     fun parse(file: File): Beatmap
     {
         return parse(file.readText())
@@ -40,6 +41,7 @@ object BeatmapReader
     /**
      * Parse a string
      */
+    @JvmStatic
     fun parse(osu: String): Beatmap
     {
         val beatmap = Beatmap()
