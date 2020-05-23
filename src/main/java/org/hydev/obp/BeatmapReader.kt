@@ -108,5 +108,12 @@ object BeatmapReader
             hit = HitManiaHold(beatmap).apply { endTime = params[0].toInt() }
             hitSample = params.subList(1, params.size)
         }
+
+        // Spinner (endTime,hitSample)
+        else if (type.get(3))
+        {
+            hit = HitSpinner(beatmap).apply { endTime = next[0].toInt() }
+            hitSample = next[1].split(":")
+        }
     }
 }
