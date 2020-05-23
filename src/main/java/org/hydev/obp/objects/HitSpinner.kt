@@ -17,4 +17,6 @@ class HitSpinner(beatmap: Beatmap) : HitCircle(beatmap)
 {
     // End time of the spinner, in milliseconds from the beginning of the beatmap's audio.
     var endTime: Int = -1
+
+    override fun param() = "$endTime,${super.param()}"
 }
