@@ -15,7 +15,7 @@ class BeatmapTimingPoint(
 
     // Start time of the timing section, in milliseconds from the beginning of the beatmap's audio.
     // The end of the timing section is the next timing point's time (or never, if this is the last timing point).
-    var time: Int,
+    var time: Double,
 
     // This property has two meanings: For uninherited timing points, the duration of a beat, in milliseconds.
     // For inherited timing points, a negative inverse slider velocity multiplier, as a percentage.
@@ -41,7 +41,7 @@ class BeatmapTimingPoint(
     var effects: BitFlags
 )
 {
-    constructor(): this(-1, -1.0, -1, -1, -1, -1, false, BitFlags())
+    constructor(): this(-1.0, -1.0, -1, -1, -1, -1, false, BitFlags())
 
     /**
      * Parse from line
@@ -50,7 +50,7 @@ class BeatmapTimingPoint(
     {
         // Line format: time,beatLength,meter,sampleSet,sampleIndex,volume,uninherited,effects
         val split = line.split(",")
-        time = split[0].toInt()
+        time = split[0].toDouble()
         beatLength = split[1].toDouble()
         meter = split[2].toInt()
         sampleSet = split[3].toInt()
