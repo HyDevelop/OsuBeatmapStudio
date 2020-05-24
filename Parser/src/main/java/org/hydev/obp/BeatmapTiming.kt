@@ -68,6 +68,12 @@ class BeatmapTiming(
      */
     val index: Int
         get() = beatmap.timings.indexOf(this)
+
+    /**
+     * Previous timing point
+     */
+    val previous: BeatmapTiming?
+        get() = if (index == 0) null else beatmap.timings[index - 1]
     /**
      * To line format
      */
