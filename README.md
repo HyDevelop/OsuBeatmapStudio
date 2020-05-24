@@ -1,7 +1,7 @@
 <h1 align="center">
   <br>
   <br>
-  OsuBeatmapParser
+  OsuBeatmapStudio
   <h4 align="center">
   Read .osu files in Java / Kotlin
   </h4>
