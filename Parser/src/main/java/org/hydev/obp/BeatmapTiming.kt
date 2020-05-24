@@ -74,6 +74,13 @@ class BeatmapTiming(
      */
     val previous: BeatmapTiming?
         get() = if (index == 0) null else beatmap.timings[index - 1]
+
+    /**
+     * True: This timing point defines slider velocity
+     * False: This timing point defines BPM
+     */
+    val isSpeedPoint: Boolean
+        get() = beatLength < 0
     /**
      * To line format
      */
