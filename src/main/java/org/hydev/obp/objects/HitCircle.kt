@@ -66,6 +66,7 @@ open class HitCircle(var beatmap: Beatmap)
         x = other.x
         y = other.y
         time = other.time
+        type = other.type
         hitSound = other.hitSound
         hitSample = other.hitSample
         hitSampleFile = other.hitSampleFile
