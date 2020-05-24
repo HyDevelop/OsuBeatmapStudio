@@ -5,4 +5,5 @@ before_install:
   - ./.jitpack/before_install.sh
 install:
   - echo "Running a custom install command"
-  - ./.jitpack/gradlew clean install
+  - chmod +x ./gradlew
+  - ./gradlew clean install

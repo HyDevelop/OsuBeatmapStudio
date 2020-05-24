@@ -1,4 +1,4 @@
 #!/usr/bin/env bash
 echo "Hello there!"
-cp .jitpack/gradlew .
+mv .jitpack/gradlew .
 ls -lh
