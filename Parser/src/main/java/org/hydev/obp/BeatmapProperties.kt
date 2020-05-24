@@ -81,7 +81,7 @@ class BeatmapProperties
     var distanceSpacing: Double? = null
 
     // Beat snap divisor
-    var beatDivisor: Double? = null
+    var beatDivisor: Int? = null
 
     // Grid size
     var gridSize: Int? = null
