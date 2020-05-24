@@ -83,6 +83,13 @@ class BeatmapTiming(
         get() = beatLength < 0
 
     /**
+     * Multiplier of the slider multiplier
+     */
+    var speedMultiplier: Double
+        get() = if (isSpeedPoint) (-100.0 / beatLength) else 1.0
+        set(value) { beatLength = -100.0 / value }
+
+    /**
      * BPM
      */
     var bpm: Double
