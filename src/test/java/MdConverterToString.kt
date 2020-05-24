@@ -1,3 +1,4 @@
+import org.hydev.obp.line
 import java.util.*
 import kotlin.reflect.full.createType
 
@@ -19,7 +20,7 @@ fun main()
             .replace("(\\| | \\| | \\|)".toRegex(), "|").replace("||", "| |")
             .replace("Integer", "Int").replace("Decimal", "Double").replace("0 or 1", "Boolean")
 
-    val output = StringBuilder("\"\"\"\n");
+    val output = StringBuilder("val output = StringBuilder().apply {\n")
 
     // Read by line
     for (line in test.split("\n").toTypedArray())
@@ -36,16 +37,13 @@ fun main()
         val name = split[1]
         val type = split[2]
 
-        @Suppress("NAME_SHADOWING")
-        val line = "${name.capitalize()}:$" +
+        output.line("    if (${name.decapitalize()} != null) line(\"${name.capitalize()}:$" +
             when (type)
             {
-                "Boolean" -> "{${name.decapitalize()}.num()}"
-                else -> name.decapitalize()
-            }
-
-        output.append(line).append("\n")
+                "Boolean" -> "{${name.decapitalize()}.num()}\")"
+                else -> name.decapitalize() + "\")"
+            })
     }
 
-    println("$output\"\"\".trimIndent()")
+    println("$output}")
 }

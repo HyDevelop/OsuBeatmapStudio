@@ -1,5 +1,4 @@
 import org.hydev.obp.BeatmapProperties
-import org.hydev.obp.BitFlags
 import kotlin.reflect.full.createType
 import kotlin.reflect.full.declaredMemberProperties
 
