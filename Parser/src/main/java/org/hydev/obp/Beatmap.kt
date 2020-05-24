@@ -21,6 +21,14 @@ class Beatmap
     var objects: ArrayList<HitCircle> = ArrayList()
 
     /**
+     * Get the timing point at time
+     */
+    fun getTiming(time: Int): BeatmapTimingPoint
+    {
+        return timings.last { it.time < time }
+    }
+
+    /**
      * To beatmap string
      */
     override fun toString(): String
