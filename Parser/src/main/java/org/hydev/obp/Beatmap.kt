@@ -17,13 +17,13 @@ class Beatmap
     var properties: BeatmapProperties = BeatmapProperties()
     var events: ArrayList<BeatmapEvent> = ArrayList()
     var colors: ArrayList<BeatmapColor> = ArrayList()
-    var timings: ArrayList<BeatmapTimingPoint> = ArrayList()
+    var timings: ArrayList<BeatmapTiming> = ArrayList()
     var objects: ArrayList<HitCircle> = ArrayList()
 
     /**
      * Get the timing point at time
      */
-    fun getTiming(time: Int): BeatmapTimingPoint
+    fun getTiming(time: Int): BeatmapTiming
     {
         return timings.last { it.time < time }
     }

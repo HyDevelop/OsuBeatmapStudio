@@ -11,7 +11,7 @@ package org.hydev.obp
  * @author Vanilla (https://github.com/VergeDX)
  * @since 2020-05-19 18:07
  */
-class BeatmapTimingPoint(
+class BeatmapTiming(
 
     // Start time of the timing section, in milliseconds from the beginning of the beatmap's audio.
     // The end of the timing section is the next timing point's time (or never, if this is the last timing point).
