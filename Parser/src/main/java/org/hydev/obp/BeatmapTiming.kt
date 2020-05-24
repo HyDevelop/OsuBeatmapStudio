@@ -64,6 +64,11 @@ class BeatmapTiming(
     }
 
     /**
+     * Index in the list
+     */
+    val index: Int
+        get() = beatmap.timings.indexOf(this)
+    /**
      * To line format
      */
     override fun toString(): String
