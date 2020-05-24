@@ -38,15 +38,18 @@ class BeatmapTiming(
     var uninherited: Boolean,
 
     // Bit flags that give the timing point extra effects. See [the effects section](#effects).
-    var effects: BitFlags
+    var effects: BitFlags,
+
+    // Timing point list
+    private var list: ArrayList<BeatmapTiming>
 )
 {
-    constructor(): this(-1.0, -1.0, -1, -1, -1, -1, false, BitFlags())
+    constructor(list: ArrayList<BeatmapTiming>): this(-1.0, -1.0, -1, -1, -1, -1, false, BitFlags(), list)
 
     /**
      * Parse from line
      */
-    constructor(line: String): this()
+    constructor(list: ArrayList<BeatmapTiming>, line: String): this(list)
     {
         // Line format: time,beatLength,meter,sampleSet,sampleIndex,volume,uninherited,effects
         val split = line.split(",")
