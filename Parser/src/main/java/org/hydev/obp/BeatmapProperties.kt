@@ -159,7 +159,7 @@ class BeatmapProperties
             "audiofilename" -> audioFilename = v
             "audiohash" -> audioHash = v
             "audioleadin" -> audioLeadIn = v.toInt()
-            "beatdivisor" -> beatDivisor = v.toDouble()
+            "beatdivisor" -> beatDivisor = v.toInt()
             "beatmapid" -> beatmapID = v.toInt()
             "beatmapsetid" -> beatmapSetID = v.toInt()
             "bookmarks" -> bookmarks = ArrayList(v.split(",").map { it.toInt() })
