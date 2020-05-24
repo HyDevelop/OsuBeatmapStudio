@@ -20,11 +20,22 @@ import java.io.File
  */
 fun main(args: Array<String>)
 {
-    val name = "1018134 siromaru + cranky - conflict"
-    val inputDir = File("D:\\Games\\osu!\\Songs\\$name")
-    val outputDir = File("D:\\Games\\osu!test\\Songs\\$name")
+    val names = listOf("1018134 siromaru + cranky - conflict")
+    
+    for (name in names)
+    {
+        val inputDir = File("D:\\Games\\osu!\\Songs\\$name")
+        val outputDir = File("D:\\Games\\osu!test\\Songs\\$name")
+        convertSet(inputDir, outputDir)
+    }
+}
 
-    for (file in inputDir.listFiles())
+/**
+ * Convert an entire set
+ */
+fun convertSet(inputDir: File, outputDir: File)
+{
+    for (file in inputDir.listFiles()!!)
     {
         val out = File(outputDir, file.name)
         if (file.name.endsWith("osu"))
