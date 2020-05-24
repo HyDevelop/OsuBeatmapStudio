@@ -90,6 +90,13 @@ class BeatmapTiming(
         set(value) { beatLength = -100.0 / value }
 
     /**
+     * Get slider multiplier (speed)
+     */
+    var speed: Double
+        get() = beatmap.properties.sliderMultiplier * speedMultiplier
+        set(value) { speedMultiplier = value / beatmap.properties.sliderMultiplier }
+    
+    /**
      * BPM
      */
     var bpm: Double
