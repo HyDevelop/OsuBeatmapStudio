@@ -76,7 +76,7 @@ object BeatmapReader
 
                 // Reading other entries
                 EVENTS -> { beatmap.events.add(BeatmapEvent(line)) }
-                TIMINGS -> { beatmap.timings.add(BeatmapTiming(line)) }
+                TIMINGS -> { beatmap.timings.add(BeatmapTiming(beatmap, line)) }
                 COLORS -> { beatmap.colors.add(BeatmapColor(line)) }
                 HITS -> { beatmap.objects.add(parseHitObject(beatmap, line)) }
             }

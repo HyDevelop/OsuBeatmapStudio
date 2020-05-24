@@ -41,15 +41,15 @@ class BeatmapTiming(
     var effects: BitFlags,
 
     // Timing point list
-    private var list: ArrayList<BeatmapTiming>
+    private var beatmap: Beatmap
 )
 {
-    constructor(list: ArrayList<BeatmapTiming>): this(-1.0, -1.0, -1, -1, -1, -1, false, BitFlags(), list)
+    constructor(beatmap: Beatmap): this(-1.0, -1.0, -1, -1, -1, -1, false, BitFlags(), beatmap)
 
     /**
      * Parse from line
      */
-    constructor(list: ArrayList<BeatmapTiming>, line: String): this(list)
+    constructor(beatmap: Beatmap, line: String): this(beatmap)
     {
         // Line format: time,beatLength,meter,sampleSet,sampleIndex,volume,uninherited,effects
         val split = line.split(",")
