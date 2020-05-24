@@ -1,0 +1,3 @@
+<component name="DependencyValidationManager">
+  <scope name="Custom" pattern="file[OsuBeatmapParser.Parser.test]:*/||file[OsuBeatmapParser.Parser]:build.gradle||file[OsuBeatmapParser.Conversion]:build.gradle||file[OsuBeatmapParser.Conversion.main]:java//*||file[OsuBeatmapParser.Parser.main]:java//*||file[OsuBeatmapParser]:settings.gradle||file[OsuBeatmapParser]:build.gradle||file[OsuBeatmapParser]:README.md||file[OsuBeatmapParser]:.gitignore" />
+</component>
