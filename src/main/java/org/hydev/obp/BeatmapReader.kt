@@ -102,7 +102,7 @@ object BeatmapReader
 
         // Hit to be parsed
         val hit: HitCircle
-        val hitSample: List<String>
+        var hitSample: List<String> = listOf("0", "0", "0", "0", "")
 
         // Mania hold (endTime:hitSample)
         if (type.get(7))
@@ -128,10 +128,10 @@ object BeatmapReader
                 curvePoints = ArrayList(curve.from(1).map { it.split(":") }.map { Point(it[0].toInt(), it[1].toInt()) })
                 slides = next[1].toInt()
                 length = next[2].toDouble()
-                edgeSounds = ArrayList(next[3].split("|").map { it.toInt() })
-                edgeSets = ArrayList(next[4].split("|"))
             }
-            hitSample = next[5].split(":")
+            if (next.size > 3) hit.edgeSounds = ArrayList(next[3].split("|").map { it.toInt() })
+            if (next.size > 4) hit.edgeSets = ArrayList(next[4].split("|"))
+            if (next.size > 5) hitSample = next[5].split(":")
         }
 
         // Hit Circle
