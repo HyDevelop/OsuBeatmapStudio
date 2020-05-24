@@ -1,4 +1,4 @@
 rootProject.name = 'OsuBeatmapParser'
 
-include 'Core'
+include 'Parser'
 include 'Conversion'
