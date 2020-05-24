@@ -93,6 +93,14 @@ class BeatmapTiming(
             else previous?.bpm ?: -1.0
         }
         set(value) { beatLength = 1.0 / value * 1000 * 60 }
+
+    /**
+     * Kiai time or not
+     */
+    var isKiai: Boolean
+        get() = effects.get(0)
+        set(value) { effects.set(0, value) }
+
     /**
      * To line format
      */
