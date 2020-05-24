@@ -21,7 +21,7 @@ import java.io.File
 fun main(args: Array<String>)
 {
     val names = listOf("1018134 siromaru + cranky - conflict")
-    
+
     for (name in names)
     {
         val inputDir = File("D:\\Games\\osu!\\Songs\\$name")
@@ -37,21 +37,19 @@ fun convertSet(inputDir: File, outputDir: File)
 {
     for (file in inputDir.listFiles()!!)
     {
-        val out = File(outputDir, file.name)
+        val out = File(outputDir, file.name.substringBefore("].osu") + " 4K].osu")
         if (file.name.endsWith("osu"))
         {
             val mania = TaikoToMania.convert(BeatmapReader.parse(file))
             out.delete()
             out.writeText(mania.toString())
         }
-        else
+
+        try
         {
-            try
-            {
-                file.copyTo(File(outputDir, file.name))
-            }
-            catch (e: Exception) {}
+            file.copyTo(File(outputDir, file.name))
         }
+        catch (e: Exception) {}
     }
 }
 
