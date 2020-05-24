@@ -63,15 +63,21 @@ object TaikoToMania
     {
         if (taiko.properties.mode != 1) return Beatmap()
 
-        // Create map TODO: Reset editor!
+        // Create map
         val mania = Beatmap().apply {
             properties = taiko.properties
             events = taiko.events
             colors = taiko.colors
             timings = taiko.timings
-            properties.mode = 3
-            properties.version += " 4K"
-            properties.circleSize = 4.0
+            properties.apply {
+                mode = 3
+                version += " 4K"
+                circleSize = 4.0
+                distanceSpacing = 0.8
+                beatDivisor = 8
+                gridSize = 32
+                timelineZoom = 3.0
+            }
         }
 
         // Convert HitObjects
