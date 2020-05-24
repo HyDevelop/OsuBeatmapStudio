@@ -1,7 +1,8 @@
 jdk:
   - openjdk8
 before_install:
+  - chmod +x ./.jitpack/before_install.sh
   - ./.jitpack/before_install.sh
 install:
   - echo "Running a custom install command"
-  - ./gradlew clean install
+  - ./.jitpack/gradlew clean install
