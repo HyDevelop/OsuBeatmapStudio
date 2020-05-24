@@ -219,14 +219,14 @@ class BeatmapProperties
             if (specialStyle != null) line("SpecialStyle:${specialStyle!!.num()}")
             line("WidescreenStoryboard:${widescreenStoryboard.num()}")
             if (samplesMatchPlaybackRate != null) line("SamplesMatchPlaybackRate:${samplesMatchPlaybackRate!!.num()}")
-
+            line()
             line("[Editor]")
             if (bookmarks != null) line("Bookmarks:$bookmarks")
             if (distanceSpacing != null) line("DistanceSpacing:$distanceSpacing")
             if (beatDivisor != null) line("BeatDivisor:$beatDivisor")
             if (gridSize != null) line("GridSize:$gridSize")
             if (timelineZoom != null) line("TimelineZoom:$timelineZoom")
-
+            line()
             line("[Metadata]")
             line("Title:$title")
             line("TitleUnicode:$titleUnicode")
@@ -238,7 +238,7 @@ class BeatmapProperties
             line("Tags:$tags")
             line("BeatmapID:$beatmapID")
             line("BeatmapSetID:$beatmapSetID")
-
+            line()
             line("[Difficulty]")
             line("HPDrainRate:$hpDrainRate")
             line("CircleSize:$circleSize")

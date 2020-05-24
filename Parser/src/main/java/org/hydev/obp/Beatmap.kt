@@ -25,7 +25,7 @@ class Beatmap
      */
     override fun toString(): String
     {
-        val output = StringBuilder("osu file format v14\n\n$properties\n")
+        val output = StringBuilder("osu file format v14\n\n$properties")
 
         if (events.isNotEmpty())
         {
