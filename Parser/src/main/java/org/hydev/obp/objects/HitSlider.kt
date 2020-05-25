@@ -41,6 +41,12 @@ class HitSlider(beatmap: Beatmap) : HitCircle(beatmap)
     var edgeSets: ArrayList<String> = ArrayList()
 
     /**
+     * Duration of this slider in ms
+     */
+    val duration: Double
+        get() = length / (timing.speed * 100.0)
+
+    /**
      * To param line
      */
     override fun param(): String
