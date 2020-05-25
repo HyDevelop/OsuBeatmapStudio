@@ -23,7 +23,7 @@ class Beatmap
     /**
      * Get the timing point at time
      */
-    fun getTiming(time: Double): BeatmapTiming
+    fun getTiming(time: Int): BeatmapTiming
     {
         return try { timings.last { it.time < time } }
         catch (e: NoSuchElementException) { timings.first() }
@@ -38,7 +38,7 @@ class Beatmap
     /**
      * Get the bpm timing at time
      */
-    fun getBpmTiming(time: Double): BeatmapTiming
+    fun getBpmTiming(time: Int): BeatmapTiming
     {
         return try { bpmTimings.last { it.time < time } }
         catch (e: NoSuchElementException) { bpmTimings.first() }
