@@ -48,7 +48,11 @@ class Beatmap
      * Convert time to beat
      * (Base Length) / time
      */
-    fun toBeat(time: Int, divider: Int = 4) = ((getBpmTiming(time).beatLength / divider) / time).toInt()
+    fun toBeat(time: Int, divider: Int = 4): Int
+    {
+        if (time == 0) return 0
+        return ((getBpmTiming(time).beatLength / divider) / time).toInt()
+    }
 
     /**
      * To beatmap string
