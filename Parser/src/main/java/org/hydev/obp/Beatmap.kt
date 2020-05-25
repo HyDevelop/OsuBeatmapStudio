@@ -48,10 +48,11 @@ class Beatmap
      * Convert time to beat
      * (Base Length) / time
      */
-    fun toBeat(time: Int, divider: Int = 4): Int
+    fun toBeat(time: Int, divider: Int = 4): Beat
     {
-        if (time == 0) return 0
-        return ((getBpmTiming(time).beatLength / divider) / time).toInt()
+        val len = getBpmTiming(time).beatLength / divider
+        val beatNum = if (time != 0) (len / time).toInt() else 0
+        return Beat(beatNum, (beatNum * len).toInt(), ((beatNum + 1) * len).toInt(), divider)
     }
 
     /**
@@ -86,6 +87,6 @@ class Beatmap
             objects.forEach { output.line(it) }
         }
 
-        return output.toString();
+        return output.toString()
     }
 }
