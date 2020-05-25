@@ -1,6 +1,7 @@
 package org.hydev.obp.objects
 
 import org.hydev.obp.Beatmap
+import org.hydev.obp.BeatmapTiming
 import org.hydev.obp.BitFlags
 import java.util.*
 
@@ -44,6 +45,12 @@ open class HitCircle(var beatmap: Beatmap)
     fun isNewCombo() = type.get(2)
     fun isSpinner() = type.get(3)
     fun isManiaHold() = type.get(7)
+
+    /**
+     * Get timing
+     */
+    val timing: BeatmapTiming
+        get() = beatmap.getTiming(time)
 
     /**
      * To line format
