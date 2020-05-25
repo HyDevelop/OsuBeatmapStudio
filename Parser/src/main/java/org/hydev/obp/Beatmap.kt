@@ -36,6 +36,15 @@ class Beatmap
         get() = timings.filter { !it.isSpeedPoint }
 
     /**
+     * Get the bpm timing at time
+     */
+    fun getBpmTiming(time: Int): BeatmapTiming
+    {
+        return try { bpmTimings.last { it.time < time } }
+        catch (e: NoSuchElementException) { bpmTimings.first() }
+    }
+
+    /**
      * To beatmap string
      */
     override fun toString(): String
