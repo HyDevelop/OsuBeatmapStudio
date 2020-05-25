@@ -95,16 +95,15 @@ class BeatmapTiming(
     var speed: Double
         get() = beatmap.properties.sliderMultiplier * speedMultiplier
         set(value) { speedMultiplier = value / beatmap.properties.sliderMultiplier }
-    
+
     /**
      * BPM
      */
     var bpm: Double
         get()
         {
-            val previous = this.previous
             return if (!isSpeedPoint) 1.0 / beatLength * 1000 * 60
-            else previous?.bpm ?: -1.0
+            else beatmap.getBpmTiming(this.time).bpm
         }
         set(value) { beatLength = 1.0 / value * 1000 * 60 }
 
