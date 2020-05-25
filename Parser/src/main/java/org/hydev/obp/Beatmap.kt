@@ -30,6 +30,12 @@ class Beatmap
     }
 
     /**
+     * Timings that contains bpm information
+     */
+    val bpmTimings: List<BeatmapTiming>
+        get() = timings.filter { !it.isSpeedPoint }
+
+    /**
      * To beatmap string
      */
     override fun toString(): String
