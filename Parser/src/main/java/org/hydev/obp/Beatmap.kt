@@ -25,7 +25,8 @@ class Beatmap
      */
     fun getTiming(time: Int): BeatmapTiming
     {
-        return timings.last { it.time < time }
+        return try { timings.last { it.time < time } }
+        catch (e: NoSuchElementException) { timings.first() }
     }
 
     /**
