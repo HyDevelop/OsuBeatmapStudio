@@ -55,10 +55,7 @@ open class HitCircle(var beatmap: Beatmap)
     /**
      * To line format
      */
-    override fun toString(): String
-    {
-        return "$x,$y,$time,$type,$hitSound,${param()}"
-    }
+    override fun toString() = "$x,$y,$time,$type,$hitSound,${param()}"
 
     /**
      * Object param part of the resulting string
