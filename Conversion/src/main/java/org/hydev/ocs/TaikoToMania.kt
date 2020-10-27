@@ -47,7 +47,7 @@ fun convertSet(inputDir: File, outputDir: File)
 
         try
         {
-            file.copyTo(File(outputDir, file.name))
+            file.copyTo(File(outputDir, file.name), true)
         }
         catch (e: Exception) {}
     }
@@ -77,6 +77,10 @@ object TaikoToMania
                 beatDivisor = 8
                 gridSize = 32
                 timelineZoom = 3.0
+                beatmapID = 0
+                beatmapSetID = -1
+                creator += " & Hykilpikonna"
+                tags.add("ConversionStudio")
             }
         }
 
